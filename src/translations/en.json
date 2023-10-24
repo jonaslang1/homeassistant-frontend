@@ -8,7 +8,7 @@
     "logbook": "Logbook",
     "history": "History",
     "mailbox": "Mailbox",
-    "shopping_list": "Shopping list",
+    "todo": "To-do Lists",
     "developer_tools": "Developer tools",
     "media_browser": "Media",
     "profile": "Profile"
@@ -1488,7 +1488,8 @@
         "key_missing": "Required key ''{key}'' is missing.",
         "key_not_expected": "Key ''{key}'' is not expected or not supported by the visual editor.",
         "key_wrong_type": "The provided value for ''{key}'' is not supported by the visual editor. We support ({type_correct}) but received ({type_wrong}).",
-        "no_template_editor_support": "Templates not supported in visual editor"
+        "no_template_editor_support": "Templates not supported in visual editor",
+        "media_query_not_supported": "This media query is not supported by the visual editor."
       },
       "supervisor": {
         "title": "Could not load the Supervisor panel!",
@@ -2662,6 +2663,9 @@
                     "fri": "Friday",
                     "sat": "Saturday",
                     "sun": "Sunday"
+                  },
+                  "description": {
+                    "full": "Confirm the {hasTime, select, \n after {time is after {time_after}}\n before {time is before {time_before}}\n after_before {time is after {time_after} and before {time_before}} \n other {}\n }{hasTimeAndDay, select, \n true { and the }\n other {}\n}{hasDay, select, \n true { day is {day}}\n other {}\n}"
                   }
                 },
                 "trigger": {
@@ -2701,7 +2705,7 @@
               "delete": "[%key:ui::common::delete%]",
               "delete_confirm_title": "Delete action?",
               "delete_confirm_text": "[%key:ui::panel::config::automation::editor::triggers::delete_confirm_text%]",
-              "unsupported_action": "No visual editor support for action: {action}",
+              "unsupported_action": "No visual editor support for this action",
               "type_select": "Action type",
               "continue_on_error": "Continue on error",
               "type": {
@@ -4467,6 +4471,7 @@
             "never_triggered": "Never triggered"
           },
           "shopping-list": {
+            "lists": "To-do Lists",
             "checked_items": "Checked items",
             "clear_items": "Clear checked items",
             "add_item": "Add item",
@@ -4753,6 +4758,37 @@
               "none": "No action"
             }
           },
+          "condition-editor": {
+            "explanation": "The card will be shown when ALL conditions below are fulfilled.",
+            "add": "Add condition",
+            "condition": {
+              "numeric_state": {
+                "label": "Entity numeric state",
+                "above": "Above",
+                "below": "Below"
+              },
+              "screen": {
+                "label": "Screen",
+                "breakpoints": "Screen sizes",
+                "breakpoints_list": {
+                  "mobile": "Mobile",
+                  "tablet": "Tablet",
+                  "desktop": "Desktop",
+                  "wide": "Wide"
+                },
+                "min": "min: {size}px"
+              },
+              "state": {
+                "label": "Entity state",
+                "state_equal": "State is equal to",
+                "state_not_equal": "State is not equal to",
+                "current_state": "current"
+              },
+              "user": {
+                "label": "User"
+              }
+            }
+          },
           "card": {
             "alarm-panel": {
               "name": "Alarm panel",
@@ -4781,28 +4817,7 @@
               "description": "The Conditional card displays another card based on entity states.",
               "conditions": "Conditions",
               "card": "Card",
-              "state_equal": "State is equal to",
-              "state_not_equal": "State is not equal to",
-              "current_state": "current",
-              "condition_explanation": "The card will be shown when ALL conditions below are fulfilled.",
-              "change_type": "Change type",
-              "add_condition": "Add condition",
-              "condition": {
-                "screen": {
-                  "label": "Screen",
-                  "breakpoints": "Screen sizes",
-                  "breakpoints_list": {
-                    "mobile": "Mobile",
-                    "tablet": "Tablet",
-                    "desktop": "Desktop",
-                    "wide": "Wide"
-                  },
-                  "min": "min: {size}px"
-                },
-                "state": {
-                  "label": "Entity state"
-                }
-              }
+              "change_type": "Change type"
             },
             "config": {
               "required": "required",
@@ -5032,7 +5047,7 @@
             "shopping-list": {
               "name": "Shopping list",
               "description": "The Shopping list card allows you to add, edit, check-off, and clear items from your shopping list.",
-              "integration_not_loaded": "This card requires the `shopping_list` integration to be set up."
+              "integration_not_loaded": "This card requires the `todo` integration to be set up."
             },
             "thermostat": {
               "name": "Thermostat",
@@ -5444,7 +5459,7 @@
           "qr_code_image": "QR code for token {name}"
         }
       },
-      "shopping_list": {
+      "todo": {
         "start_conversation": "Start conversation"
       },
       "page-authorize": {
